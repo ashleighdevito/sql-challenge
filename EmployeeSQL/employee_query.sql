@@ -56,3 +56,12 @@ SELECT last_name, COUNT(last_name) AS "Name Count"
 FROM employee
 	GROUP BY last_name
 	ORDER BY "Name Count" DESC;
+	
+-- Bonus analysis
+SELECT e.emp_no, t.title, s.salary
+FROM title t
+	JOIN employee e
+	ON t.title_id=e.emp_title_id
+		JOIN salary s
+		ON e.emp_no = s. emp_no;
+
